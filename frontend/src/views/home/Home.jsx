@@ -6,6 +6,10 @@ const Home = () => {
   const navigate = useNavigate();
   const [projects, setProjects] = useState([]);
 
+  const navigateToProject = (projectId) => {
+    navigate(`/project/${projectId}`);
+  };
+
   useEffect(() => {
     axios.get("http://localhost:3000/projects/getAll").then((response) => {
       setProjects(response.data.data);
@@ -34,6 +38,9 @@ const Home = () => {
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {projects.map((project, index) => (
               <div
+                onClick={() => {
+                  navigateToProject(project._id);
+                }}
                 key={index}
                 className="bg-white rounded-xl p-5 shadow hover:shadow-md transition"
               >
