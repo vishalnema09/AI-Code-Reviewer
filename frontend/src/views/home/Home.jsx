@@ -11,7 +11,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:3000/projects/getAll").then((response) => {
+    axios.get("https://ai-code-reviewer-81km.onrender.com/projects/getAll").then((response) => {
       setProjects(response.data.data);
     });
   }, []);
