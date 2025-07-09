@@ -38,7 +38,7 @@ const Project = () => {
   }
 
   useEffect(() => {
-    const io = SocketIo("http://localhost:3000", {
+    const io = SocketIo("https://ai-code-reviewer-81km.onrender.com", {
       query: {
         project: params.id,
       },
